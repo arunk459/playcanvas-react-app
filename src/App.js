@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useEffect } from 'react';
 import PlayCanvasViewer from './PlayCanvasViewer';
-import appInsights from './appInsights';
+import { appInsights } from './appInsights';
 
 function App() {
   useEffect(() => {
