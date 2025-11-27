@@ -1,11 +1,18 @@
 {
-    "routes": [
-      {
-        "route": "/*",
-        "serve": "/index.html",
-        "statusCode": 200
-      }
-    ]
+    "navigationFallback": {
+      "rewrite": "/index.html",
+      "exclude": [
+        "/files/*",
+        "/favicon.ico",
+        "/*.wasm",
+        "/*.js",
+        "/*.png",
+        "/*.jpg",
+        "/*.json"
+      ]
+    },
+    "mimeTypes": {
+      ".wasm": "application/wasm"
+    }
   }
-  
   
