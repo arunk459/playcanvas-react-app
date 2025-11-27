@@ -1,18 +1,29 @@
 {
+    "routes": [
+      {
+        "route": "/files/*",
+        "allowedRoles": ["anonymous"]
+      },
+      {
+        "route": "/*",
+        "serve": "/index.html"
+      }
+    ],
+    "mimeTypes": {
+      ".wasm": "application/wasm",
+      ".js": "application/javascript",
+      ".json": "application/json",
+      ".gz": "application/gzip",
+      ".br": "application/octet-stream"
+    },
     "navigationFallback": {
       "rewrite": "/index.html",
-      "exclude": [
-        "/files/*",
-        "/favicon.ico",
-        "/*.wasm",
-        "/*.js",
-        "/*.png",
-        "/*.jpg",
-        "/*.json"
-      ]
+      "exclude": ["/files/*"]
     },
-    "mimeTypes": {
-      ".wasm": "application/wasm"
+    "responseOverrides": {
+      "404": {
+        "rewrite": "/index.html"
+      }
     }
   }
   
